@@ -6,7 +6,7 @@ export const UserService = {
   getAll: async () => {
     return await UserModel.find();
   },
-
+  findByEmail: async (email) => UserModel.findOne({ email }),
   // regiteration service
   register: async (body) => {
     const user = await UserModel.create(body);
